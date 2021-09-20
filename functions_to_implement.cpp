@@ -30,10 +30,21 @@ std::vector<bool> EvenMask(std::vector<int>);
 std::vector<bool> OddMask(std::vector<int>);
 
 // Sums all numbers in a vector and returns the resulting value
-int Sum(std::vector<int> nums);
+int Sum(std::vector<int> nums){
+    int sums = 0;
+    for(int i = 0; i < nums.size(); i++){
+        sums = sums + nums[i];
+    }
+    return sum;
+}
 
 // Multiplies all numbers in a vector together and returns the resulting value
-int Product(std::vector<int> nums);
+int Product(std::vector<int> nums){
+    int products = 0;
+    for(int i = 0; i < nums.size(); i++){
+        products = products * nums[i];
+    }
+}
 
 // Adds an integer n to each element of a given vector
 std::vector<int> VectorPlusN(std::vector<int> v, int n);
