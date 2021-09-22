@@ -1,5 +1,8 @@
 /* String functions section */
 
+#include <vector>
+#include <string>
+
 // Splits a single string on separator into a vector of strings
 std::vector<std::string> Split(std::string whole, std::string separator);
 
@@ -18,7 +21,9 @@ std::vector<int> MatchVectors(std::vector<int> a, std::vector<int> b);
 
 // divides an input integer by 2 until it is impossible to do so, then returns the final number.
 // (16 = 2 * 2 * 2 * 2 * 1 -> 1, 7 -> 7, 26 = 2 * 13 -> 13, 52 = 2 * 2 * 13 -> 13)
-int RemoveTwos(float original);
+int RemoveTwos(int original) {
+    return (original % 2 == 0) ? RemoveTwos(original / 2) : original;
+}
 
 // takes a vector of integers and removes all elements evenly divisible by the passed in int
 std::vector<int> MultiplesFilter(std::vector<int>, int divides_by);
@@ -30,7 +35,11 @@ std::vector<bool> EvenMask(std::vector<int>);
 std::vector<bool> OddMask(std::vector<int>);
 
 // Sums all numbers in a vector and returns the resulting value
-int Sum(std::vector<float> nums);
+int Sum(std::vector<int> nums) {
+    int total = 0;
+    for(unsigned int i = 0; i < nums.size(); i++) total += nums[i];
+    return total;
+}
 
 // Multiplies all numbers in a vector together and returns the resulting value
 int Product(std::vector<int> nums);
