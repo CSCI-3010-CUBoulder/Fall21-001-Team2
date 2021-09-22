@@ -1,5 +1,5 @@
 language: cpp
 # before script: cd utility functions
 script:
-  - make
+  - g++ test.cpp  -o test
   - ./test -s
